@@ -9,21 +9,26 @@ function App() {
 
   function handleChange(event) {
     const { name, value } = event.target;
+    console.log(name, value);
 
-    setContact(prevValue => {
+    setContact((prevValue) => {
       if (name === "fName") {
+        console.log(prevValue);
+
         return {
           fName: value,
           lName: prevValue.lName,
           email: prevValue.email
         };
       } else if (name === "lName") {
+        console.log(prevValue);
         return {
           fName: prevValue.fName,
           lName: value,
           email: prevValue.email
         };
       } else if (name === "email") {
+        console.log(prevValue);
         return {
           fName: prevValue.fName,
           lName: prevValue.lName,
